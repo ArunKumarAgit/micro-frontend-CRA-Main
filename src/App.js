@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-
+import 'react-toastify/dist/ReactToastify.css';
+import Sidebar from './components/Sidebar';
+import { Route, Routes } from 'react-router-dom';
+import BGCComponent from './components/BGC/BGCComponent';
+import InitiateBGC from './components/BGC/initiateBGC/InitiateBGC';
+// import Table from './components/table/Table';
+import DetailComponent from './components/Common/DetailComponent';
+import Home from './components/home/Home';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Sidebar />
+      <Routes>
+        <Route path="/bgc" element={<BGCComponent />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/bgc/reqDetailComp/addbgc" element={<InitiateBGC />} />
+        <Route path="/bgc/reqDetailComp" element={<DetailComponent />} />
+      </Routes>
+    </>
   );
 }
 
