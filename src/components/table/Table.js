@@ -56,8 +56,6 @@ function Table(props) {
     navigate('reqDetailComp');
   };
   const test = key => {
-    console.log(key);
-    setValue(key);
     navigate('reqDetailComp');
   };
   const addBGCComponent = namesof => {
